@@ -6,8 +6,8 @@ package model.Organization;
  */
 
 import java.util.ArrayList;
+import model.WorkQueue.WorkQueue;
 
-import java.util.ArrayList;
 
 /**
  *
@@ -18,6 +18,21 @@ public abstract class Organization {
     private String organizationName;    
     private int organizationID;
     private static int counter = 0;
+    private WorkQueue workQueue;
+    
+    public String getOrganizationName() {
+        return organizationName;
+    }
+
+    public static int getCounter() {
+        return counter;
+    }
+
+    public WorkQueue getWorkQueue() {
+        return workQueue;
+    }
+
+    
 
     public enum Type {
 
