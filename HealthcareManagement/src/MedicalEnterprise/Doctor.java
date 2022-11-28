@@ -6,4 +6,5 @@ package MedicalEnterprise;
  */
 public class Doctor {
     
+    
 }
