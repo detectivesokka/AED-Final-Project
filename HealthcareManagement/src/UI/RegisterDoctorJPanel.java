@@ -8,12 +8,12 @@ package UI;
  *
  * @author ganes
  */
-public class RegisterJPanel extends javax.swing.JPanel {
+public class RegisterDoctorJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form RegisterJPanel
      */
-    public RegisterJPanel() {
+    public RegisterDoctorJPanel() {
         initComponents();
     }
 
