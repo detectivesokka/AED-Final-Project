@@ -4,7 +4,7 @@ package MedicalEnterprise;
  *
  * @author saidutt
  */
-public class MedicalEnterprise {
+public class MobileClinic {
     
     
 }
