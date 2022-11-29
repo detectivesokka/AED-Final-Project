@@ -20,9 +20,9 @@ public class UserAccountDirectory {
         userList = new ArrayList<>();
     }
     
-    public User addUser(String name, String password, int role) {
+    public User addUser(String name, String password) {
         
-        User u = new User(name, password, role);
+        User u = new User(name, password);
         userList.add(u);
         return u;
     }

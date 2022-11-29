@@ -1,9 +1,15 @@
 package System;
 
+import Supplier.SupplierDirectory;
+import Doctor.DoctorDirectory;
+import Driver.DriverDirectory;
 import GovernmentEnterprise.GovEnterprise;
 import MedicalEnterprise.MedicalEnterprise;
+import Nurse.NurseDirectory;
+import Patient.PatientDirectory;
 import PharmaEnterprise.PharmaEnterprise;
 import SuppplierEnterprise.SupplierEnterprise;
+import User.User;
 import User.UserAccountDirectory;
 
 /**
@@ -32,9 +38,17 @@ public class HMSystem {
         this.userDirectory = new UserAccountDirectory();
     }
 
-    public void addUser() {
+    public User addUser(String username, String password) {
         
+        for (User u : this.userDirectory.getUserList()) {
+            
+            if (u.getUserName().equals(username)) { 
+                // username already exists
+                return null;
+            }
+        }
         
+        return this.userDirectory.addUser(username, password);
     }
         
             
