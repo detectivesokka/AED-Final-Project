@@ -6,10 +6,13 @@ import User.User;
  *
  * @author saidutt
  */
-public class Doctor extends User{
+public class Doctor{
     
-    public Doctor(String name, String password) {
-        super(name, password);
+    private User user;
+    
+    public Doctor(User user) {
+        
+        this.user = user;
     }
         
 }

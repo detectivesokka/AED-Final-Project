@@ -6,10 +6,12 @@ import User.User;
  *
  * @author saidutt
  */
-public class Supplier extends User{
+public class Supplier{
     
-    public Supplier(String name, String password) {
+    User user;
+    
+    public Supplier(User user) {
         
-        super(name, password);
+        this.user = user;
     }
 }

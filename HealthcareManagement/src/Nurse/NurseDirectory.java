@@ -1,6 +1,6 @@
 package Nurse;
 
-import Driver.Driver;
+import User.User;
 import java.util.ArrayList;
 
 /**
@@ -11,9 +11,9 @@ public class NurseDirectory {
     
     private ArrayList<Nurse> nurseList;
 
-    public Nurse addUser(String name, String password) {       
+    public Nurse addUser(User user) {       
         
-        Nurse u = new Nurse(name, password);
+        Nurse u = new Nurse(user);
         nurseList.add(u);
         return u;
     }

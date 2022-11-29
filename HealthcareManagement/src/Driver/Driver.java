@@ -6,10 +6,13 @@ import User.User;
  *
  * @author saidutt
  */
-public class Driver extends User{
+public class Driver {
     
-    public Driver(String userName, String password) {
-        super(userName, password);
+    private User user;
+    
+    public Driver(User user) {
+        
+        this.user = user;
     }
     
 }

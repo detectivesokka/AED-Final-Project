@@ -1,6 +1,6 @@
 package Driver;
 
-import Doctor.Doctor;
+import User.User;
 import java.util.ArrayList;
 
 /**
@@ -11,9 +11,9 @@ public class DriverDirectory {
     
     private ArrayList<Driver> driverList;
     
-    public Driver addUser(String name, String password) {        
+    public Driver addUser(User user) {        
         
-        Driver u = new Driver(name, password);
+        Driver u = new Driver(user);
         driverList.add(u);
         return u;
     }
