@@ -1,18 +1,14 @@
 package PharmaEnterprise;
 
-
-import Role.Role;
 import User.User;
 
 /**
  *
  * @author Ganesh Kukreja
  */
-public class Pharmacist extends User{
+public class Pharmacist{
     
-    public Pharmacist(String userName, String password, Role userRole) {
-        super(userName, password, userRole);
-    }
+    private User user;        
     
     private String name;
     private int age;
@@ -20,6 +16,11 @@ public class Pharmacist extends User{
     private long phoneno;
     private String email;
 
+    public Pharmacist(User user) {
+        
+        this.user = user;
+    }
+    
     public String getName() {
         return name;
     }
@@ -58,10 +59,5 @@ public class Pharmacist extends User{
 
     public void setEmail(String email) {
         this.email = email;
-    }
-    
-    
-    
-    
- 
+    } 
 }
