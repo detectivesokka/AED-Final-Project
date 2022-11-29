@@ -8,6 +8,6 @@ package PharmaEnterprise;
  *
  * @author ganes
  */
-public class PharmaEnterprise {
+public class Pharmacy {
     
 }
