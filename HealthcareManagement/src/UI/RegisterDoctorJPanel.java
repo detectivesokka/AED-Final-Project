@@ -13,7 +13,7 @@ public class RegisterDoctorJPanel extends javax.swing.JPanel {
     /**
      * Creates new form RegisterJPanel
      */
-    public RegisterDoctorJPanel() {
+    public RegisterDoctorJPanel(Object profile) {
         initComponents();
     }
 
