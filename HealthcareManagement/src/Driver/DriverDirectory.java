@@ -11,7 +11,16 @@ public class DriverDirectory {
     
     private ArrayList<Driver> driverList;
     
-    public Driver addUser(User user) {        
+    {
+        driverList = new ArrayList<>();
+    }
+    
+    public Driver addDriver(User user) {        
+        
+        if(user == null) {
+            
+            return null;
+        }
         
         Driver u = new Driver(user);
         driverList.add(u);
