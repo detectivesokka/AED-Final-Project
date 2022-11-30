@@ -5,7 +5,10 @@
  */
 package model.Enterprise;
 
-
+import model.Organization.Organization;
+import model.Supplier.Medicine;
+import model.Supplier.Supplier;
+import model.Role.Role;
 import java.util.ArrayList;
 import java.util.List;
 
