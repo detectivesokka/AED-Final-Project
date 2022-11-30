@@ -205,6 +205,21 @@ public class LoginJFrame extends javax.swing.JFrame {
                 userPanel = new RegisterNurseJPanel();
             }
             
+            case "Pharmacist" ->{
+                
+                userPanel = new RegisterPharmacistJPanel();
+            }
+            
+            case "Seller" ->{
+                
+                userPanel = new RegisterSellerJPanel();
+            }
+            
+            case "Insurance agent" ->{
+                
+                userPanel = new RegisterAgentInsuranceJPanel();
+            }
+            
             default -> {
                 
                 return;

@@ -4,17 +4,25 @@
  */
 package UI;
 
+import Pharmacist.Pharmacist;
+import System.HMSystem;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+
 /**
  *
  * @author ganes
  */
 public class RegisterPharmacistJPanel extends javax.swing.JPanel {
 
+     private final HMSystem system;
+     
     /**
      * Creates new form RegisterPharmacistJPanel
      */
     public RegisterPharmacistJPanel() {
         initComponents();
+        this.system = HMSystem.getInstance();
     }
 
     /**
@@ -60,6 +68,11 @@ public class RegisterPharmacistJPanel extends javax.swing.JPanel {
         comboSex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitActionPerformed(evt);
+            }
+        });
 
         fldPassword.setText("jPasswordField1");
 
@@ -147,6 +160,33 @@ public class RegisterPharmacistJPanel extends javax.swing.JPanel {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+        // TODO add your handling code here:
+        
+        try{
+            
+            String pwd = String.valueOf(fldPassword.getPassword());
+            
+            Pharmacist newPharmacist = this.system.addPharmacist(fldUsername.getText(),pwd);
+           
+            newPharmacist.setName(fldName.getText());
+            newPharmacist.setAge(Integer.parseInt(fldAge.getText()));
+            
+            newPharmacist.setSex((String)comboSex.getSelectedItem());
+            //Todo email validation pending
+            newPharmacist.setEmail(fldEmail.getText());
+            
+            
+        }catch (Exception e) {
+            
+            JOptionPane.showMessageDialog(null, "Invalid input. Please try again");            
+            return;
+        }
+            
+        setVisible(false);
+        SwingUtilities.getWindowAncestor(this).dispose();
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
