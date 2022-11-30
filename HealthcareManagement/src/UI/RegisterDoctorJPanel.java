@@ -1,18 +1,27 @@
 package UI;
 
+import Doctor.Doctor;
+import System.HMSystem;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+
 /**
  *
  * @author ganes
  */
 public class RegisterDoctorJPanel extends javax.swing.JPanel {
 
+    private final HMSystem system;
+
     /**
      * Creates new form RegisterJPanel
      */
     public RegisterDoctorJPanel() {
-        initComponents();
-    }
 
+        initComponents();
+        this.system = HMSystem.getInstance();                
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,13 +41,14 @@ public class RegisterDoctorJPanel extends javax.swing.JPanel {
         lblHospital = new javax.swing.JLabel();
         comboSex = new javax.swing.JComboBox<>();
         fldUsername = new javax.swing.JTextField();
-        fldPassword = new javax.swing.JTextField();
         fldName = new javax.swing.JTextField();
         fldAge = new javax.swing.JTextField();
         fldCredentials = new javax.swing.JTextField();
         fldExperience = new javax.swing.JTextField();
         comboHospital = new javax.swing.JComboBox<>();
         btnSubmit = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        fldPassword = new javax.swing.JPasswordField();
 
         lblUsername.setText("Username");
 
@@ -56,17 +66,23 @@ public class RegisterDoctorJPanel extends javax.swing.JPanel {
 
         lblHospital.setText("Hospital");
 
-        comboSex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        comboHospital.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboSex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Others" }));
 
         btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel1.setText("New doctor");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(65, 65, 65)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -81,24 +97,32 @@ public class RegisterDoctorJPanel extends javax.swing.JPanel {
                             .addComponent(lblExperience)
                             .addComponent(lblHospital))
                         .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(comboHospital, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(comboSex, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(fldUsername)
-                            .addComponent(fldPassword)
-                            .addComponent(fldName)
                             .addComponent(fldAge)
                             .addComponent(fldCredentials)
-                            .addComponent(fldExperience)))
+                            .addComponent(fldExperience)
+                            .addComponent(fldName)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(fldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(fldPassword)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnSubmit)
                         .addGap(1, 1, 1)))
-                .addContainerGap(442, Short.MAX_VALUE))
+                .addGap(349, 349, 349))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(247, 247, 247)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(8, 8, 8)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUsername)
                     .addComponent(fldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -132,9 +156,40 @@ public class RegisterDoctorJPanel extends javax.swing.JPanel {
                     .addComponent(comboHospital, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addComponent(btnSubmit)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+                        
+        
+        try {
+            
+            String pwd = String.valueOf(fldPassword.getPassword());  
+                                                            
+            Doctor newDoctor = this.system.addDoctor(fldUsername.getText(), pwd);
+            
+            newDoctor.setName(fldName.getText());
+            newDoctor.setAge(Integer.parseInt(fldAge.getText()));               
+            //newDoctor.setEthnicity(comboEthnicity.getSelectedIndex());            
+            newDoctor.setSex((String)comboSex.getSelectedItem());                                    
+            newDoctor.setCredentials(fldCredentials.getText());
+            newDoctor.setExperience(Integer.parseInt(fldExperience.getText()));
+            
+//            newDoctor.setHospitalId(system.getHospitalDirectory().searchHospital((String)comboHospital.getSelectedItem()).getHospitalId());            
+            
+        } catch (Exception e) {
+            
+            JOptionPane.showMessageDialog(null, "Invalid input. Please try again");            
+            return;
+        }
+                                
+        
+        // Close the window
+        setVisible(false); //you can't see me!
+        SwingUtilities.getWindowAncestor(this).dispose();  
+
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -145,8 +200,9 @@ public class RegisterDoctorJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField fldCredentials;
     private javax.swing.JTextField fldExperience;
     private javax.swing.JTextField fldName;
-    private javax.swing.JTextField fldPassword;
+    private javax.swing.JPasswordField fldPassword;
     private javax.swing.JTextField fldUsername;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblAge;
     private javax.swing.JLabel lblCredentials;
     private javax.swing.JLabel lblExperience;
