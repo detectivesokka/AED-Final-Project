@@ -169,17 +169,14 @@ public class RegisterDoctorJPanel extends javax.swing.JPanel {
                                                             
             Doctor newDoctor = this.system.addDoctor(fldUsername.getText(), pwd);
             
-          /* newDoctor.setName(fldName.getText());
+            newDoctor.setName(fldName.getText());
             newDoctor.setAge(Integer.parseInt(fldAge.getText()));               
-            newDoctor.setEthnicity(comboEthnicity.getSelectedIndex());            
-            newDoctor.setSex(comboSex.getSelectedIndex());            
-            newDoctor.setSalary(Float.parseFloat(fldSalary.getText()));
+            //newDoctor.setEthnicity(comboEthnicity.getSelectedIndex());            
+            newDoctor.setSex((String)comboSex.getSelectedItem());                                    
             newDoctor.setCredentials(fldCredentials.getText());
             newDoctor.setExperience(Integer.parseInt(fldExperience.getText()));
-            newDoctor.setHouseId(system.getCity().searchHouse((String)comboHouse.getSelectedItem()).getHouseId());
-            newDoctor.setHospitalId(system.getHospitalDirectory().searchHospital((String)comboHospital.getSelectedItem()).getHospitalId());
-            newDoctor.setHospital(system.getHospitalDirectory().searchHospital((String)comboHospital.getSelectedItem()));
-          */  
+            
+//            newDoctor.setHospitalId(system.getHospitalDirectory().searchHospital((String)comboHospital.getSelectedItem()).getHospitalId());            
             
         } catch (Exception e) {
             

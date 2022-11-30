@@ -107,8 +107,8 @@ public class HMSystem {
     
     public Doctor addDoctor(String username, String password) {
         
-        User u = getUserDirectory().addUser(username, password);
-        return getDocDirectory().addDoctor(u);        
+        User u = getUserDirectory().addUser(username, password); // Creates new User
+        return getDocDirectory().addDoctor(u);     // creates new Doctor   
     }
     
     private void initData() {
