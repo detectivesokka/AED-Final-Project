@@ -1,20 +1,29 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package UI;
+
+import Doctor.Doctor;
+import Patient.Patient;
+import System.HMSystem;
+import User.User;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
  * @author ganes
  */
 public class LoginJFrame extends javax.swing.JFrame {
-
+    
+    public HMSystem system;
+    
     /**
      * Creates new form LoginJFrame
      */
     public LoginJFrame() {
+        
+        system = new HMSystem();
         initComponents();
+        
     }
 
     /**
@@ -30,10 +39,10 @@ public class LoginJFrame extends javax.swing.JFrame {
         lblUsername = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
         fldUsername = new javax.swing.JTextField();
-        fldPassword = new javax.swing.JTextField();
         btnLogin = new javax.swing.JButton();
         btnRegister = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        fldPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,15 +56,19 @@ public class LoginJFrame extends javax.swing.JFrame {
             }
         });
 
-        fldPassword.addActionListener(new java.awt.event.ActionListener() {
+        btnLogin.setText("Login");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fldPasswordActionPerformed(evt);
+                btnLoginActionPerformed(evt);
             }
         });
 
-        btnLogin.setText("Login");
-
         btnRegister.setText("Register");
+        btnRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegisterActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Login");
 
@@ -77,9 +90,9 @@ public class LoginJFrame extends javax.swing.JFrame {
                                 .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(20, 20, 20)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(fldPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                            .addComponent(fldUsername)
-                            .addComponent(btnLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(fldUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                            .addComponent(btnLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fldPassword)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(198, 198, 198)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -94,11 +107,11 @@ public class LoginJFrame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
+                .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPassword)
-                    .addComponent(fldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
+                    .addComponent(fldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLogin)
                     .addComponent(btnRegister))
@@ -129,10 +142,62 @@ public class LoginJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_fldUsernameActionPerformed
 
-    private void fldPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldPasswordActionPerformed
+    private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_fldPasswordActionPerformed
+    }//GEN-LAST:event_btnRegisterActionPerformed
 
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        
+        // Since getPassword() returns a character array we convert it to String using String.valueOf()
+        String pwd = String.valueOf(fldPassword.getPassword());
+        User user = null;
+       
+        for(User u : system.getUserDirectory().getUserList()) {
+            
+            if (u.getUserName().equals(fldUsername.getText()) && u.isPassword(pwd))
+            {
+                user = u;
+                break;
+            }
+        }
+        
+        if(user != null) {                        
+            
+            JFrame userFrame=new JFrame();    
+            JPanel userPanel = new JPanel();
+            
+            if (user.getProfile() instanceof Doctor) {
+                
+                // TODO - modify this
+                userPanel = new RegisterDoctorJPanel((Doctor)user.getProfile());
+                userFrame.getContentPane().add(userPanel);
+                
+            } else if (user.getProfile() instanceof Patient) {
+                
+                // TODO - Modify this
+                userPanel = new RegisterPatientJPanel((Patient)user.getProfile());
+                userFrame.getContentPane().add(userPanel);
+                
+            }                                                                      
+           
+            // Window opens in full size mode
+            userFrame.setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);             
+            userFrame.setVisible(true);            
+            
+        } else {
+            
+            // Show error message
+            JOptionPane.showMessageDialog(null, "Incorrect username/password. Please try again later.");
+        }
+        
+        clearPasswordField();     
+    }//GEN-LAST:event_btnLoginActionPerformed
+    
+    private void clearPasswordField() {
+        
+        fldPassword.setText("");
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -171,7 +236,7 @@ public class LoginJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnRegister;
-    private javax.swing.JTextField fldPassword;
+    private javax.swing.JPasswordField fldPassword;
     private javax.swing.JTextField fldUsername;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

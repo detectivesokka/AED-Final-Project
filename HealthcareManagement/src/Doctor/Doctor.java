@@ -1,18 +1,24 @@
 package Doctor;
 
+import Profile.Profile;
 import User.User;
 
 /**
  *
  * @author saidutt
  */
-public class Doctor{
-    
-    private User user;
+public class Doctor extends Profile{       
     
     public Doctor(User user) {
         
-        this.user = user;
+        super(user);
+        user.setProfile(this); 
+    }
+
+    @Override
+    public String getRole() {
+        
+        return "Doctor";
     }
         
 }

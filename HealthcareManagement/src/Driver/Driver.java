@@ -1,18 +1,24 @@
 package Driver;
 
+import Profile.Profile;
 import User.User;
 
 /**
  *
  * @author saidutt
  */
-public class Driver {
-    
-    private User user;
-    
+public class Driver extends Profile{
+            
     public Driver(User user) {
         
-        this.user = user;
+        super(user);
+        user.setProfile(this);
+    }
+
+    @Override
+    public String getRole() {
+        
+        return "Driver";
     }
     
 }

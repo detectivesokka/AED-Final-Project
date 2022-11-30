@@ -11,7 +11,20 @@ public class PatientDirectory {
     
     private ArrayList<Patient> patientList;
     
-    public Patient addUser(User user) {        
+    {
+        patientList = new ArrayList<>();
+    }
+    
+    public ArrayList<Patient> getPatientList() {
+        return patientList;
+    }
+    
+    public Patient addPatient(User user) {        
+        
+        if(user == null) {
+            
+            return null;
+        }        
         
         Patient u = new Patient(user);
         patientList.add(u);

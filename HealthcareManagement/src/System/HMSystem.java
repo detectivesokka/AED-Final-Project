@@ -1,11 +1,13 @@
 package System;
 
+import Doctor.Doctor;
 import Supplier.SupplierDirectory;
 import Doctor.DoctorDirectory;
 import Driver.DriverDirectory;
 import GovernmentEnterprise.GovEnterprise;
 import MedicalEnterprise.MedicalEnterprise;
 import Nurse.NurseDirectory;
+import Patient.Patient;
 import Patient.PatientDirectory;
 import PharmaEnterprise.PharmaEnterprise;
 
@@ -36,62 +38,51 @@ public class HMSystem {
         this.supplierEnterprise = new SupplierEnterprise();
         this.pharmaEnterprise = new PharmaEnterprise();
         this.medicalEnterprise = new MedicalEnterprise();
-        this.userDirectory = new UserAccountDirectory();
+        
+        this.userDirectory = new UserAccountDirectory();    
+        
+        this.docDirectory = new DoctorDirectory();
+        this.nurseDirectory = new NurseDirectory();
+        this.driverDirectory = new DriverDirectory();
+        this.patientDirectory = new PatientDirectory();
+        
+        
+        initData(); // initialize some data
     }
-
-    public User addUser(String username, String password) {
-        
-        for (User u : this.userDirectory.getUserList()) {
-            
-            if (u.getUserName().equals(username)) { 
-                // username already exists
-                return null;
-            }
-        }
-        
-        return this.userDirectory.addUser(username, password);
-    }
-        
-            
-    public GovEnterprise getGovernmentEnterprise() {
-        
+                    
+    public GovEnterprise getGovernmentEnterprise() {       
         return governmentEnterprise;
     }
-
-    public void setGovernmentEnterprise(GovEnterprise governmentEnterprise) {
-        this.governmentEnterprise = governmentEnterprise;
-    }
-
+   
     public SupplierEnterprise getSupplierEnterprise() {
         return supplierEnterprise;
-    }
-
-    public void setSupplierEnterprise(SupplierEnterprise supplierEnterprise) {
-        this.supplierEnterprise = supplierEnterprise;
     }
 
     public PharmaEnterprise getPharmaEnterprise() {
         return pharmaEnterprise;
     }
 
-    public void setPharmaEnterprise(PharmaEnterprise pharmaEnterprise) {
-        this.pharmaEnterprise = pharmaEnterprise;
-    }
-
     public MedicalEnterprise getMedicalEnterprise() {
         return medicalEnterprise;
-    }
-
-    public void setMedicalEnterprise(MedicalEnterprise medicalEnterprise) {
-        this.medicalEnterprise = medicalEnterprise;
     }
 
     public UserAccountDirectory getUserDirectory() {
         return userDirectory;
     }
-
-    public void setUserDirectory(UserAccountDirectory userDirectory) {
-        this.userDirectory = userDirectory;
-    }       
     
+    private void initData() {
+        
+        User doc = this.userDirectory.addUser("doc", "doc");
+        this.docDirectory.addDoctor(doc);
+        
+        User pat = this.userDirectory.addUser("pat", "pat");
+        this.patientDirectory.addPatient(pat);
+        
+        User driver = this.userDirectory.addUser("driver", "driver");
+        this.driverDirectory.addDriver(driver);
+        
+        User nur = this.userDirectory.addUser("nur", "nur");
+        this.nurseDirectory.addNurse(nur);
+        
+    }
 }

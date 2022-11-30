@@ -4,6 +4,8 @@
  */
 package UI;
 
+import Patient.Patient;
+
 /**
  *
  * @author ganes
@@ -13,7 +15,7 @@ public class RegisterPatientJPanel extends javax.swing.JPanel {
     /**
      * Creates new form RegisterPatientJPanel
      */
-    public RegisterPatientJPanel() {
+    public RegisterPatientJPanel(Patient par) {
         initComponents();
     }
 
