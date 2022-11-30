@@ -32,7 +32,7 @@ public class HMSystem {
     private NurseDirectory nurseDirectory;
     private DriverDirectory driverDirectory;
     private SupplierDirectory supplierDirectory;    
-    private PatientDirectory patientDirectory;    
+    private PatientDirectory patientDirectory;        
     
     private HMSystem() {
         
@@ -46,8 +46,7 @@ public class HMSystem {
         this.docDirectory = new DoctorDirectory();
         this.nurseDirectory = new NurseDirectory();
         this.driverDirectory = new DriverDirectory();
-        this.patientDirectory = new PatientDirectory();
-        
+        this.patientDirectory = new PatientDirectory();        
         
         initData(); // initialize some data
     }
@@ -61,6 +60,30 @@ public class HMSystem {
         
         return HMSystem.system;
     }
+
+    public static HMSystem getSystem() {
+        return system;
+    }
+
+    public DoctorDirectory getDocDirectory() {
+        return docDirectory;
+    }
+
+    public NurseDirectory getNurseDirectory() {
+        return nurseDirectory;
+    }
+
+    public DriverDirectory getDriverDirectory() {
+        return driverDirectory;
+    }
+
+    public SupplierDirectory getSupplierDirectory() {
+        return supplierDirectory;
+    }
+
+    public PatientDirectory getPatientDirectory() {
+        return patientDirectory;
+    }        
     
     public GovEnterprise getGovernmentEnterprise() {       
         return governmentEnterprise;
@@ -80,6 +103,12 @@ public class HMSystem {
 
     public UserAccountDirectory getUserDirectory() {
         return userDirectory;
+    }
+    
+    public Doctor addDoctor(String username, String password) {
+        
+        User u = getUserDirectory().addUser(username, password);
+        return getDocDirectory().addDoctor(u);        
     }
     
     private void initData() {
