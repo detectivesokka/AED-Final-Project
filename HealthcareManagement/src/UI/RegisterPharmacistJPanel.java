@@ -36,12 +36,12 @@ public class RegisterPharmacistJPanel extends javax.swing.JPanel {
         lblEmail = new javax.swing.JLabel();
         comboSex = new javax.swing.JComboBox<>();
         fldUsername = new javax.swing.JTextField();
-        fldPassword = new javax.swing.JTextField();
         fldName = new javax.swing.JTextField();
         fldAge = new javax.swing.JTextField();
         fldPhoneNo = new javax.swing.JTextField();
         fldEmail = new javax.swing.JTextField();
         btnSubmit = new javax.swing.JButton();
+        fldPassword = new javax.swing.JPasswordField();
 
         lblUsername.setText("Username");
 
@@ -61,6 +61,8 @@ public class RegisterPharmacistJPanel extends javax.swing.JPanel {
 
         btnSubmit.setText("Submit");
 
+        fldPassword.setText("jPasswordField1");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -77,16 +79,15 @@ public class RegisterPharmacistJPanel extends javax.swing.JPanel {
                         .addComponent(lblSex, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(lblEmail))
                 .addGap(36, 36, 36)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSubmit)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(comboSex, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(fldUsername)
-                        .addComponent(fldPassword)
-                        .addComponent(fldName)
-                        .addComponent(fldAge)
-                        .addComponent(fldPhoneNo)
-                        .addComponent(fldEmail)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnSubmit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(comboSex, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(fldUsername)
+                    .addComponent(fldName)
+                    .addComponent(fldAge)
+                    .addComponent(fldPhoneNo)
+                    .addComponent(fldEmail)
+                    .addComponent(fldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
                 .addContainerGap(442, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -154,7 +155,7 @@ public class RegisterPharmacistJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField fldAge;
     private javax.swing.JTextField fldEmail;
     private javax.swing.JTextField fldName;
-    private javax.swing.JTextField fldPassword;
+    private javax.swing.JPasswordField fldPassword;
     private javax.swing.JTextField fldPhoneNo;
     private javax.swing.JTextField fldUsername;
     private javax.swing.JPanel jPanel1;
