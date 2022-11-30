@@ -26,7 +26,7 @@
                       <Component id="comboSelectRole" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="500" max="32767" attributes="0"/>
+              <EmptySpace pref="445" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -54,11 +54,20 @@
     <Component class="javax.swing.JComboBox" name="comboSelectRole">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="13">
+            <StringItem index="0" value="Doctor"/>
+            <StringItem index="1" value="Patient"/>
+            <StringItem index="2" value="Nurse"/>
+            <StringItem index="3" value="Driver"/>
+            <StringItem index="4" value="Insurance agent"/>
+            <StringItem index="5" value="Policeman"/>
+            <StringItem index="6" value="Pharmacist"/>
+            <StringItem index="7" value="Seller"/>
+            <StringItem index="8" value="System admin"/>
+            <StringItem index="9" value="ME admin"/>
+            <StringItem index="10" value="GE admin"/>
+            <StringItem index="11" value="PE admin"/>
+            <StringItem index="12" value="SE admin"/>
           </StringArray>
         </Property>
       </Properties>
@@ -73,6 +82,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Submit"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSumitRoleActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

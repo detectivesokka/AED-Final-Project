@@ -142,7 +142,16 @@ public class LoginJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_fldUsernameActionPerformed
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
-        // TODO add your handling code here:
+        
+        JFrame userFrame=new JFrame();    
+        JPanel userPanel = new JPanel();
+        
+        userPanel = new SelectJPanel();
+        userFrame.getContentPane().add(userPanel);                
+        
+        // Window opens in full size mode
+        userFrame.setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);             
+        userFrame.setVisible(true);                            
     }//GEN-LAST:event_btnRegisterActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
@@ -165,23 +174,21 @@ public class LoginJFrame extends javax.swing.JFrame {
             JFrame userFrame=new JFrame();    
             JPanel userPanel = new JPanel();
             
-            if (user.getProfile() instanceof Doctor) {
-                
-                // TODO - modify this
-                userPanel = new RegisterDoctorJPanel((Doctor)user.getProfile());
-                userFrame.getContentPane().add(userPanel);
+            // going to the relevant panels            
+            if (user.getProfile() instanceof Doctor) { 
+                                
+                userPanel = new DoctorJPanel((Doctor)user.getProfile());                
                 
             } else if (user.getProfile() instanceof Patient) {
-                
-                // TODO - Modify this
-                userPanel = new RegisterPatientJPanel((Patient)user.getProfile());
-                userFrame.getContentPane().add(userPanel);
-                
-            }                                                                      
+                                
+                userPanel = new PatientJPanel((Patient)user.getProfile());                
+            }                                                                       
            
+            userFrame.getContentPane().add(userPanel); // link panel to frame
+            
             // Window opens in full size mode
             userFrame.setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);             
-            userFrame.setVisible(true);            
+            userFrame.setVisible(true); // display frame           
             
         } else {
             

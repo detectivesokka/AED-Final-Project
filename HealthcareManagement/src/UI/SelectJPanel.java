@@ -1,5 +1,8 @@
 package UI;
 
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
 /**
  *
  * @author ganes
@@ -9,9 +12,12 @@ public class SelectJPanel extends javax.swing.JPanel {
     /**
      * Creates new form RegisterJPanel
      */
+    private String role;
+    
     public SelectJPanel() {
-        
+                
         initComponents();
+        this.role = comboSelectRole.getItemAt(0); // setting default value as the first item
     }
 
     /**
@@ -29,7 +35,7 @@ public class SelectJPanel extends javax.swing.JPanel {
 
         lblSelectRole.setText("Select Role");
 
-        comboSelectRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboSelectRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Doctor", "Patient", "Nurse", "Driver", "Insurance agent", "Policeman", "Pharmacist", "Seller", "System admin", "ME admin", "GE admin", "PE admin", "SE admin" }));
         comboSelectRole.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboSelectRoleActionPerformed(evt);
@@ -37,6 +43,11 @@ public class SelectJPanel extends javax.swing.JPanel {
         });
 
         btnSumitRole.setText("Submit");
+        btnSumitRole.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSumitRoleActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -50,7 +61,7 @@ public class SelectJPanel extends javax.swing.JPanel {
                         .addComponent(lblSelectRole, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(53, 53, 53)
                         .addComponent(comboSelectRole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(500, Short.MAX_VALUE))
+                .addContainerGap(445, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -66,8 +77,65 @@ public class SelectJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void comboSelectRoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboSelectRoleActionPerformed
-        // TODO add your handling code here:
+        
+        this.role = (String)comboSelectRole.getSelectedItem();
     }//GEN-LAST:event_comboSelectRoleActionPerformed
+
+    private void btnSumitRoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumitRoleActionPerformed
+        
+        JFrame userFrame=new JFrame();    
+        JPanel userPanel = new JPanel();
+        
+        
+        switch(this.role) {
+            
+            case "Doctor" -> {
+                userPanel = new RegisterDoctorJPanel();
+            }
+            case "Patient" -> {
+                userPanel = new RegisterPatientJPanel();
+            }
+            case "Nurse" -> {
+                userPanel = new RegisterNurseJPanel();
+            }
+            case "Driver" -> {
+                userPanel = new RegisterDriverJPanel();
+            }
+            case "Insurance agent" -> {
+                
+            }
+            case "Policeman" -> {
+                
+            }
+            case "Pharmacist" -> {
+                
+            }
+            case "Seller" -> {
+                
+            }
+            case "System admin" -> {
+                userPanel = new RegisterAdminJPanel();
+            }
+            case "ME admin" -> {
+                userPanel = new RegisterAdminJPanel();
+            }
+            case "GE admin" -> {
+                userPanel = new RegisterAdminJPanel();
+            }
+            case "PE admin" -> {
+                userPanel = new RegisterAdminJPanel();
+            }
+            case "SE admin" -> {
+                userPanel = new RegisterAdminJPanel();
+            }
+        }
+        
+        userFrame.getContentPane().add(userPanel); // link panel to frame
+            
+        // Window opens in full size mode
+        userFrame.setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);             
+        userFrame.setVisible(true); // display frame                   
+    }//GEN-LAST:event_btnSumitRoleActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
