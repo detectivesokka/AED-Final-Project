@@ -36,7 +36,6 @@ public class RegisterPolicemanJPanel extends javax.swing.JPanel {
         lblEmail = new javax.swing.JLabel();
         comboSex = new javax.swing.JComboBox<>();
         fldUsername = new javax.swing.JTextField();
-        fldPassword = new javax.swing.JTextField();
         fldName = new javax.swing.JTextField();
         fldAge = new javax.swing.JTextField();
         fldPhoneNo = new javax.swing.JTextField();
@@ -44,6 +43,7 @@ public class RegisterPolicemanJPanel extends javax.swing.JPanel {
         btnSubmit = new javax.swing.JButton();
         lblCredentials = new javax.swing.JLabel();
         comdoCredentials = new javax.swing.JComboBox<>();
+        fldPassword = new javax.swing.JPasswordField();
 
         lblUsername.setText("Username");
 
@@ -67,6 +67,8 @@ public class RegisterPolicemanJPanel extends javax.swing.JPanel {
 
         comdoCredentials.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        fldPassword.setText("jPasswordField1");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -84,18 +86,17 @@ public class RegisterPolicemanJPanel extends javax.swing.JPanel {
                     .addComponent(lblEmail)
                     .addComponent(lblCredentials))
                 .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(comdoCredentials, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnSubmit, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(comboSex, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(fldUsername)
-                            .addComponent(fldPassword)
-                            .addComponent(fldName)
-                            .addComponent(fldAge)
-                            .addComponent(fldPhoneNo)
-                            .addComponent(fldEmail))))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(comdoCredentials, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSubmit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(comboSex, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(fldUsername)
+                        .addComponent(fldName)
+                        .addComponent(fldAge)
+                        .addComponent(fldPhoneNo)
+                        .addComponent(fldEmail))
+                    .addComponent(fldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
                 .addContainerGap(442, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -168,7 +169,7 @@ public class RegisterPolicemanJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField fldAge;
     private javax.swing.JTextField fldEmail;
     private javax.swing.JTextField fldName;
-    private javax.swing.JTextField fldPassword;
+    private javax.swing.JPasswordField fldPassword;
     private javax.swing.JTextField fldPhoneNo;
     private javax.swing.JTextField fldUsername;
     private javax.swing.JPanel jPanel1;

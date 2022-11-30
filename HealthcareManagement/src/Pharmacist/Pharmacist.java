@@ -1,14 +1,13 @@
-package PharmaEnterprise;
+package Pharmacist;
 
+import Profile.Profile;
 import User.User;
 
 /**
  *
  * @author Ganesh Kukreja
  */
-public class Pharmacist{
-    
-    private User user;        
+public class Pharmacist extends Profile{
     
     private String name;
     private int age;
@@ -18,7 +17,14 @@ public class Pharmacist{
 
     public Pharmacist(User user) {
         
-        this.user = user;
+        super(user);
+        user.setProfile(this); 
+    }
+
+    @Override
+    public String getRole() {
+        
+        return "Pharmacist";
     }
     
     public String getName() {
