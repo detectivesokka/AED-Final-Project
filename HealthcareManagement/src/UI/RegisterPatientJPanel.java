@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package UI;
 
 import Patient.Patient;
@@ -15,7 +11,7 @@ public class RegisterPatientJPanel extends javax.swing.JPanel {
     /**
      * Creates new form RegisterPatientJPanel
      */
-    public RegisterPatientJPanel(Patient par) {
+    public RegisterPatientJPanel() {
         initComponents();
     }
 

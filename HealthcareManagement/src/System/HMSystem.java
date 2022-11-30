@@ -20,7 +20,8 @@ import User.UserAccountDirectory;
  * @author saidutt
  */
 public class HMSystem {
-
+    
+    private static HMSystem system;
     private GovEnterprise governmentEnterprise;
     private SupplierEnterprise supplierEnterprise;
     private PharmaEnterprise pharmaEnterprise;
@@ -33,7 +34,8 @@ public class HMSystem {
     private SupplierDirectory supplierDirectory;    
     private PatientDirectory patientDirectory;    
     
-    {
+    private HMSystem() {
+        
         this.governmentEnterprise = new GovEnterprise();
         this.supplierEnterprise = new SupplierEnterprise();
         this.pharmaEnterprise = new PharmaEnterprise();
@@ -49,7 +51,17 @@ public class HMSystem {
         
         initData(); // initialize some data
     }
-                    
+    
+    public static HMSystem getInstance() {
+        
+        if (HMSystem.system == null) {
+            
+            HMSystem.system = new HMSystem();
+        }
+        
+        return HMSystem.system;
+    }
+    
     public GovEnterprise getGovernmentEnterprise() {       
         return governmentEnterprise;
     }
