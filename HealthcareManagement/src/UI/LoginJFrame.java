@@ -21,9 +21,8 @@ public class LoginJFrame extends javax.swing.JFrame {
      */
     public LoginJFrame() {
         
-        system = new HMSystem();
-        initComponents();
-        
+        system = HMSystem.getInstance();
+        initComponents();        
     }
 
     /**

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package UI;
 
 /**
@@ -14,6 +10,7 @@ public class SelectJPanel extends javax.swing.JPanel {
      * Creates new form RegisterJPanel
      */
     public SelectJPanel() {
+        
         initComponents();
     }
 
