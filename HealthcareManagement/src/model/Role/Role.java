@@ -4,10 +4,11 @@
  */
 package model.Role;
 
-
+import model.DB4OUtil.DB4OUtil;
+import model.EcoSystem;
 import model.Enterprise.Enterprise;
 import model.Organization.Organization;
-
+import model.UserAccount.UserAccount;
 import javax.swing.JPanel;
 
 /**
@@ -49,10 +50,11 @@ public abstract class Role {
     }
 
     public abstract JPanel createWorkArea(JPanel userProcessContainer,
-          
+            UserAccount account,
             Organization organization,
-            Enterprise enterprise);
-            
+            Enterprise enterprise,
+            EcoSystem ecosystem,
+            DB4OUtil dB4OUtil);
 
     @Override
     public String toString() {
