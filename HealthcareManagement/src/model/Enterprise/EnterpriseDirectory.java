@@ -25,7 +25,29 @@ public class EnterpriseDirectory {
 
     public EnterpriseDirectory() {
         enterpriseList = new ArrayList<Enterprise>();
-    }    
+    }
+
+    /**
+     * Accepts enterprise name and type and returns new Enterprise object.
+     *
+     * @param name
+     * @param type
+     * @return Enterprise object
+     */
+    public Enterprise createEnterprise(String name, Enterprise.EnterpriseType type) {
+        
+        Enterprise enterprise = null;
+        
+        switch(type) {
+            
+            case HealthCenter: 
+                enterprise = new HealthCenterEnterprise(name);
+                break;            
+        }
+        
+        enterpriseList.add(enterprise);                
+        return enterprise;
+    }
     
     public Enterprise searchEnterprise(String name) {
         
