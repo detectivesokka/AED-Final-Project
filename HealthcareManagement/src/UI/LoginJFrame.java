@@ -1,6 +1,8 @@
 package UI;
 
 import Doctor.Doctor;
+import Driver.Driver;
+import Nurse.Nurse;
 import Patient.Patient;
 import System.HMSystem;
 import User.User;
@@ -261,8 +263,16 @@ public class LoginJFrame extends javax.swing.JFrame {
             } else if (user.getProfile() instanceof Patient) {
                                 
                 userPanel = new PatientJPanel((Patient)user.getProfile());                
-            }                                                                       
-           
+                
+            } else if (user.getProfile() instanceof Nurse) {
+                
+                userPanel = new NurseJPanel((Nurse)user.getProfile());               
+                
+            } else if (user.getProfile() instanceof Driver) {
+                                
+                userPanel = new DriverJPanel((Driver)user.getProfile());                                   
+            }
+            
             userFrame.getContentPane().add(userPanel); // link panel to frame
             
             // Window opens in full size mode

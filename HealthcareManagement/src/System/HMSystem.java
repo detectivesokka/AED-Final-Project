@@ -71,7 +71,8 @@ public class HMSystem {
         
         User u = getUserDirectory().addUser(username, password); // Creates new User
         return getPatientDirectory().addPatient(u);     // creates new Patient
-    }    
+    }                   
+    
     private void initData() {
         
         User doc = this.userDirectory.addUser("doc", "doc");
