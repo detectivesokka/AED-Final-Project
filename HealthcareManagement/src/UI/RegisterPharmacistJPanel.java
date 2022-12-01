@@ -168,7 +168,7 @@ public class RegisterPharmacistJPanel extends javax.swing.JPanel {
             
             String pwd = String.valueOf(fldPassword.getPassword());
             
-            /*Pharmacist newPharmacist = this.system.addPharmacist(fldUsername.getText(),pwd);
+            Pharmacist newPharmacist = this.system.addPharmacist(fldUsername.getText(),pwd);
            
             newPharmacist.setName(fldName.getText());
             newPharmacist.setAge(Integer.parseInt(fldAge.getText()));
@@ -176,7 +176,7 @@ public class RegisterPharmacistJPanel extends javax.swing.JPanel {
             newPharmacist.setSex((String)comboSex.getSelectedItem());
             //Todo email validation pending
             newPharmacist.setEmail(fldEmail.getText());
-            */
+            
             
         }catch (Exception e) {
             
