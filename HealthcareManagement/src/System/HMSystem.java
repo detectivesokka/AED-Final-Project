@@ -10,6 +10,8 @@ import Nurse.NurseDirectory;
 import Patient.Patient;
 import Patient.PatientDirectory;
 import PharmaEnterprise.PharmaEnterprise;
+import Pharmacist.Pharmacist;
+import Pharmacist.PharmacistDirectory;
 
 import SuppplierEnterprise.SupplierEnterprise;
 import User.User;
@@ -32,7 +34,9 @@ public class HMSystem {
     private NurseDirectory nurseDirectory;
     private DriverDirectory driverDirectory;
     private SupplierDirectory supplierDirectory;    
-    private PatientDirectory patientDirectory;        
+    private PatientDirectory patientDirectory;
+    private PharmacistDirectory pharmacistDirectory;
+
     
     private HMSystem() {
         
@@ -46,7 +50,8 @@ public class HMSystem {
         this.docDirectory = new DoctorDirectory();
         this.nurseDirectory = new NurseDirectory();
         this.driverDirectory = new DriverDirectory();
-        this.patientDirectory = new PatientDirectory();        
+        this.patientDirectory = new PatientDirectory(); 
+        this.pharmacistDirectory = new PharmacistDirectory();
         
         initData(); // initialize some data
     }
@@ -71,7 +76,13 @@ public class HMSystem {
         
         User u = getUserDirectory().addUser(username, password); // Creates new User
         return getPatientDirectory().addPatient(u);     // creates new Patient
-    }                   
+    }  
+    
+    public Pharmacist addPharmacist(String username, String password) {
+        
+        User u = getUserDirectory().addUser(username, password); // Creates new User
+        return getPharmacistDirectory().addPharmacist(u);     // creates new Pharmacist
+    } 
     
     private void initData() {
         
@@ -131,5 +142,9 @@ public class HMSystem {
 
     public UserAccountDirectory getUserDirectory() {
         return userDirectory;
-    }        
+    }  
+    
+    public PharmacistDirectory getPharmacistDirectory() {
+        return pharmacistDirectory;
+    }
 }
