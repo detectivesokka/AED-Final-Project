@@ -16,7 +16,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="668" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="705" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -28,7 +28,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="471" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="474" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -45,75 +45,79 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="lblPhoneNo" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblAge" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblName" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblPassword" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblUsername" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblSex" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="193" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="lblName" min="-2" pref="53" max="-2" attributes="0"/>
+                              <Component id="lblPassword" min="-2" pref="53" max="-2" attributes="0"/>
+                              <Component id="lblUsername" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblAge" min="-2" pref="53" max="-2" attributes="0"/>
+                              <Component id="lblSex" min="-2" pref="53" max="-2" attributes="0"/>
+                              <Component id="lblEmail" min="-2" pref="53" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="47" pref="47" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="fldUsername" alignment="0" min="-2" pref="72" max="-2" attributes="0"/>
+                              <Component id="fldPassword" alignment="0" min="-2" pref="72" max="-2" attributes="0"/>
+                              <Component id="fldName" alignment="1" min="-2" pref="72" max="-2" attributes="0"/>
+                              <Component id="fldAge" alignment="1" min="-2" pref="72" max="-2" attributes="0"/>
+                              <Component id="comboSex" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="fldEmail" alignment="1" min="-2" pref="72" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <Component id="lblEmail" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="234" max="-2" attributes="0"/>
+                          <Component id="btnSubmit" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="264" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="btnSubmit" alignment="0" max="32767" attributes="0"/>
-                      <Component id="comboSex" alignment="0" max="32767" attributes="0"/>
-                      <Component id="fldUsername" alignment="0" max="32767" attributes="0"/>
-                      <Component id="fldName" alignment="0" max="32767" attributes="0"/>
-                      <Component id="fldAge" alignment="0" max="32767" attributes="0"/>
-                      <Component id="fldPhoneNo" alignment="0" max="32767" attributes="0"/>
-                      <Component id="fldEmail" alignment="0" max="32767" attributes="0"/>
-                      <Component id="fldPassword" alignment="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="442" max="32767" attributes="0"/>
+                  <EmptySpace pref="303" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblUsername" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="fldUsername" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="fldUsername" max="32767" attributes="0"/>
+                      <Component id="lblUsername" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblPassword" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblPassword" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                       <Component id="fldPassword" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblName" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblName" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                       <Component id="fldName" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblAge" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblAge" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                       <Component id="fldAge" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblSex" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="comboSex" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblSex" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblPhoneNo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="fldPhoneNo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblEmail" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                       <Component id="fldEmail" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   <Component id="btnSubmit" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="95" max="32767" attributes="0"/>
+                  <EmptySpace pref="131" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -144,11 +148,6 @@
             <Property name="text" type="java.lang.String" value="Sex"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblPhoneNo">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Phone No"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="lblEmail">
           <Properties>
             <Property name="text" type="java.lang.String" value="Email"/>
@@ -175,12 +174,13 @@
         </Component>
         <Component class="javax.swing.JTextField" name="fldAge">
         </Component>
-        <Component class="javax.swing.JTextField" name="fldPhoneNo">
-        </Component>
         <Component class="javax.swing.JTextField" name="fldEmail">
         </Component>
         <Component class="javax.swing.JButton" name="btnSubmit">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="12" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Submit"/>
           </Properties>
           <Events>
@@ -190,6 +190,14 @@
         <Component class="javax.swing.JPasswordField" name="fldPassword">
           <Properties>
             <Property name="text" type="java.lang.String" value="jPasswordField1"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="18" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="New Pharmacist"/>
           </Properties>
         </Component>
       </SubComponents>
