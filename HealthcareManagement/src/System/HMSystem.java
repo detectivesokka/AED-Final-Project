@@ -60,6 +60,33 @@ public class HMSystem {
         
         return HMSystem.system;
     }
+    
+    public Doctor addDoctor(String username, String password) {
+        
+        User u = getUserDirectory().addUser(username, password); // Creates new User
+        return getDocDirectory().addDoctor(u);     // creates new Doctor   
+    }
+    
+    public Patient addPatient(String username, String password) {
+        
+        User u = getUserDirectory().addUser(username, password); // Creates new User
+        return getPatientDirectory().addPatient(u);     // creates new Patient
+    }    
+    private void initData() {
+        
+        User doc = this.userDirectory.addUser("doc", "doc");
+        this.docDirectory.addDoctor(doc);
+        
+        User pat = this.userDirectory.addUser("pat", "pat");
+        this.patientDirectory.addPatient(pat);
+        
+        User driver = this.userDirectory.addUser("driver", "driver");
+        this.driverDirectory.addDriver(driver);
+        
+        User nur = this.userDirectory.addUser("nur", "nur");
+        this.nurseDirectory.addNurse(nur);
+        
+    }    
 
     public static HMSystem getSystem() {
         return system;
@@ -103,27 +130,5 @@ public class HMSystem {
 
     public UserAccountDirectory getUserDirectory() {
         return userDirectory;
-    }
-    
-    public Doctor addDoctor(String username, String password) {
-        
-        User u = getUserDirectory().addUser(username, password); // Creates new User
-        return getDocDirectory().addDoctor(u);     // creates new Doctor   
-    }
-    
-    private void initData() {
-        
-        User doc = this.userDirectory.addUser("doc", "doc");
-        this.docDirectory.addDoctor(doc);
-        
-        User pat = this.userDirectory.addUser("pat", "pat");
-        this.patientDirectory.addPatient(pat);
-        
-        User driver = this.userDirectory.addUser("driver", "driver");
-        this.driverDirectory.addDriver(driver);
-        
-        User nur = this.userDirectory.addUser("nur", "nur");
-        this.nurseDirectory.addNurse(nur);
-        
-    }
+    }        
 }
