@@ -138,6 +138,7 @@ public class RegisterPatientJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblAge, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
+<<<<<<< Updated upstream
                         .addGap(2, 2, 2)
                         .addComponent(fldAge, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(10, 10, 10)
@@ -145,12 +146,20 @@ public class RegisterPatientJPanel extends javax.swing.JPanel {
                     .addComponent(lblSex, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(comboSex, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(8, 8, 8)
+=======
+                        .addComponent(comboSex)
+                        .addGap(4, 4, 4)))
+>>>>>>> Stashed changes
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnSubmit)
+<<<<<<< Updated upstream
                 .addContainerGap(213, Short.MAX_VALUE))
+=======
+                .addContainerGap(203, Short.MAX_VALUE))
+>>>>>>> Stashed changes
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -81,19 +81,26 @@
                       <Component id="fldAge" min="-2" pref="24" max="-2" attributes="0"/>
                   </Group>
               </Group>
+<<<<<<< Updated upstream
               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblSex" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                   <Component id="comboSex" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+=======
+>>>>>>> Stashed changes
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="fldEmail" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblEmail" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnSubmit" min="-2" max="-2" attributes="0"/>
+<<<<<<< Updated upstream
               <EmptySpace pref="213" max="32767" attributes="0"/>
+=======
+              <EmptySpace pref="203" max="32767" attributes="0"/>
+>>>>>>> Stashed changes
           </Group>
       </Group>
     </DimensionLayout>
