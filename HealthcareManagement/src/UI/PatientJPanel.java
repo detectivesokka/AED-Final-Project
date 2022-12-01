@@ -1,10 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package UI;
 
 import Patient.Patient;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -12,13 +9,27 @@ import Patient.Patient;
  */
 public class PatientJPanel extends javax.swing.JPanel {
 
+    private Patient patient;
+    
     /**
      * Creates new form PatientJPanel
      */
-    public PatientJPanel(Patient par) {
+    public PatientJPanel(Patient patient) {
+        
         initComponents();
+        this.patient = patient;
+        fillPatientData(patient);
     }
-
+    
+    private void fillPatientData(Patient pat) {
+        
+        fldName.setText(pat.getName());
+        fldUsername.setText(pat.getUser().getUserName());
+        fldAge.setText(Integer.toString(pat.getAge()));
+        comboSex.setSelectedItem(pat.getSex());        
+        fldEmail.setText(pat.getEmail());
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,19 +39,231 @@ public class PatientJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        tbdPane = new javax.swing.JTabbedPane();
+        panelWelcome = new javax.swing.JPanel();
+        lblWelcomeTitle = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        fldUsername = new javax.swing.JTextField();
+        fldName = new javax.swing.JTextField();
+        fldEmail = new javax.swing.JTextField();
+        btnSubmit = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        fldPassword = new javax.swing.JPasswordField();
+        jLabel7 = new javax.swing.JLabel();
+        fldAge = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        comboSex = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+
+        lblWelcomeTitle.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        lblWelcomeTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblWelcomeTitle.setText("Welcome ");
+
+        jLabel1.setText("Name");
+
+        jLabel2.setText("Username");
+
+        fldUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldUsernameActionPerformed(evt);
+            }
+        });
+
+        fldName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldNameActionPerformed(evt);
+            }
+        });
+
+        fldEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldEmailActionPerformed(evt);
+            }
+        });
+
+        btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Password");
+
+        jLabel7.setText("Age");
+
+        fldAge.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldAgeActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("Sex");
+
+        comboSex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Others" }));
+
+        jLabel3.setText("Email");
+
+        javax.swing.GroupLayout panelWelcomeLayout = new javax.swing.GroupLayout(panelWelcome);
+        panelWelcome.setLayout(panelWelcomeLayout);
+        panelWelcomeLayout.setHorizontalGroup(
+            panelWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblWelcomeTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelWelcomeLayout.createSequentialGroup()
+                .addGroup(panelWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panelWelcomeLayout.createSequentialGroup()
+                        .addContainerGap(115, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(fldName, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelWelcomeLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(panelWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelWelcomeLayout.createSequentialGroup()
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(fldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelWelcomeLayout.createSequentialGroup()
+                                .addGroup(panelWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(panelWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(fldPassword)
+                                    .addComponent(fldEmail)
+                                    .addComponent(fldAge)
+                                    .addComponent(comboSex, javax.swing.GroupLayout.Alignment.TRAILING, 0, 130, Short.MAX_VALUE))))))
+                .addGap(209, 209, 209))
+            .addGroup(panelWelcomeLayout.createSequentialGroup()
+                .addGap(221, 221, 221)
+                .addComponent(btnSubmit)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelWelcomeLayout.setVerticalGroup(
+            panelWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelWelcomeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblWelcomeTitle)
+                .addGap(52, 52, 52)
+                .addGroup(panelWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fldName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(fldPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fldAge, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                    .addComponent(comboSex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(fldEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnSubmit)
+                .addGap(114, 114, 114))
+        );
+
+        tbdPane.addTab("Welcome", panelWelcome);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 608, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 456, Short.MAX_VALUE)
+        );
+
+        tbdPane.addTab("tab2", jPanel2);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(tbdPane, javax.swing.GroupLayout.PREFERRED_SIZE, 608, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(tbdPane, javax.swing.GroupLayout.PREFERRED_SIZE, 487, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void fldUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fldUsernameActionPerformed
+
+    private void fldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fldNameActionPerformed
+
+    private void fldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fldEmailActionPerformed
+
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+        // TODO add your handling code here:
+
+        try {
+
+            String pwd = String.valueOf(fldPassword.getPassword());
+                         
+            this.patient.getUser().setUserName(fldUsername.getText());
+            this.patient.getUser().setPassword(pwd);
+
+            this.patient.setName(fldName.getText());
+            this.patient.setAge(Integer.parseInt(fldAge.getText()));
+            this.patient.setSex((String) comboSex.getSelectedItem());            
+            this.patient.setEmail(fldEmail.getText());
+            
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(null, "Invalid input. Please try again");
+            return;
+        }
+    }//GEN-LAST:event_btnSubmitActionPerformed
+
+    private void fldAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldAgeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fldAgeActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSubmit;
+    private javax.swing.JComboBox<String> comboSex;
+    private javax.swing.JTextField fldAge;
+    private javax.swing.JTextField fldEmail;
+    private javax.swing.JTextField fldName;
+    private javax.swing.JPasswordField fldPassword;
+    private javax.swing.JTextField fldUsername;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblWelcomeTitle;
+    private javax.swing.JPanel panelWelcome;
+    private javax.swing.JTabbedPane tbdPane;
     // End of variables declaration//GEN-END:variables
 }
