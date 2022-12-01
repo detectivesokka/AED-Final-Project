@@ -5,6 +5,7 @@
 package model.UserAccount;
 
 import model.Employee.Employee;
+import model.Role.Role;
 import model.WorkQueue.WorkQueue;
 
 /**
@@ -15,7 +16,8 @@ public class UserAccount {
 
     private String userName;
     private String password;
-    private Employee emp;    
+    private Employee emp;
+    private Role role;
     private WorkQueue workQueue;
 
     public UserAccount() {
@@ -36,12 +38,20 @@ public class UserAccount {
 
     public void setPassword(String password) {
         this.password = password;
-    }    
+    }
+
+    public Role getRole() {
+        return role;
+    }
 
     public void setEmp(Employee emp) {
         this.emp = emp;
     }
-    
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
     public Employee getEmp() {
         return emp;
     }
