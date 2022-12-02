@@ -5,7 +5,13 @@
  */
 package model.Role;
 
-
+import model.DB4OUtil.DB4OUtil;
+import model.EcoSystem;
+import model.Enterprise.Enterprise;
+import model.Organization.Organization;
+import model.Organization.PharmacistOrganization;
+import model.UserAccount.UserAccount;
+import javax.swing.JPanel;
 import userinterface.PharmacistRole.PharmacistWorkAreaJPanel;
 
 /**
