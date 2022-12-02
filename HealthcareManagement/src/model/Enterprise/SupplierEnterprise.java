@@ -35,6 +35,7 @@ public class SupplierEnterprise extends Enterprise {
      *
      * @return List of organization types
      */
+    @Override
     public List<Organization.Type> getAllOrganizationTypes() {
         List<Organization.Type> orgTypes = new ArrayList<>();
         orgTypes.add(Organization.Type.Pharmacist);
