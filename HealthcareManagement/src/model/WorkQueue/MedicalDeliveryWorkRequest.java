@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.WorkQueue;
+package model.WorkQueue;
 
-import Business.Supplier.Medicine;
-import Business.UserAccount.UserAccount;
+import model.Supplier.Medicine;
+import model.UserAccount.UserAccount;
 import java.util.HashMap;
 
 /**
