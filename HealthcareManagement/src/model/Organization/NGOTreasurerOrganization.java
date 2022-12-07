@@ -5,7 +5,7 @@
  */
 package model.Organization;
 
-
+import model.Role.NGOTreasurer;
 import model.Role.Role;
 import java.util.ArrayList;
 
