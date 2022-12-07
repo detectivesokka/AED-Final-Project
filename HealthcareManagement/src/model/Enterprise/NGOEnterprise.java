@@ -3,7 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package model.Enterprise;
 
+import model.Organization.Organization;
+import model.Role.Role;
 import java.util.ArrayList;
 import java.util.List;
 
