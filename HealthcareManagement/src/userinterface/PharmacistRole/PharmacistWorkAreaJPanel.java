@@ -22,7 +22,7 @@ import userinterface.LoginJPanel;
 
 /**
  *
- * @author Sai Dutt
+ * @author Ganesh Kukreja
  */
 public class PharmacistWorkAreaJPanel extends javax.swing.JPanel {
 
@@ -418,7 +418,25 @@ public class PharmacistWorkAreaJPanel extends javax.swing.JPanel {
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
 
-       
+        Medicine m= new Medicine();
+        if(medNameTxt.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Medicine name cannot be empty", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if(medPriceTxt.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Medicine price cannot be empty", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        try{
+            m.setMedicinePrice(Double.parseDouble(medPriceTxt.getText()));
+            m.setMedicineName(medNameTxt.getText());
+            JOptionPane.showMessageDialog(null, "Medicine Added", "Success", JOptionPane.INFORMATION_MESSAGE);
+            medNameTxt.setText("");
+            medPriceTxt.setText("");
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Medicine price has to be numeric", "Error", JOptionPane.ERROR_MESSAGE);
+        }
         
     }//GEN-LAST:event_btnAddActionPerformed
 
