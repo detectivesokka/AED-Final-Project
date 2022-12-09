@@ -4,11 +4,14 @@
  */
 package model.WorkQueue;
 
+import model.UserAccount.UserAccount;
 import java.util.Date;
 
 public abstract class WorkRequest {
 
     private String message;
+    private UserAccount sender;
+    private UserAccount receiver;
     private String status;
     private Date requestDate;
     private Date resolveDate;
@@ -25,7 +28,21 @@ public abstract class WorkRequest {
         this.message = message;
     }
 
-    
+    public UserAccount getSender() {
+        return sender;
+    }
+
+    public void setSender(UserAccount sender) {
+        this.sender = sender;
+    }
+
+    public UserAccount getReceiver() {
+        return receiver;
+    }
+
+    public void setReceiver(UserAccount receiver) {
+        this.receiver = receiver;
+    }
 
     public String getStatus() {
         return status;
