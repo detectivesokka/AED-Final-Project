@@ -20,7 +20,7 @@ import javax.swing.JPanel;
 public class InsuranceArchitectRole extends Role {
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business,DB4OUtil dB4OUtil) {
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem model,DB4OUtil dB4OUtil) {
         
         return null;
     }

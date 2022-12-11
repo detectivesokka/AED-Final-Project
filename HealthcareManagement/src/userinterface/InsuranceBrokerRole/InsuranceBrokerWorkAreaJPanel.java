@@ -5,12 +5,12 @@
  */
 package userinterface.InsuranceBrokerRole;
 
-import Business.DB4OUtil.DB4OUtil;
+import model.DB4OUtil.DB4OUtil;
 import model.EcoSystem;
-import Business.Enterprise.Enterprise;
+import model.Enterprise.Enterprise;
 import model.Organization.InsBrokerOrganization;
 import model.Organization.Organization;
-import Business.UserAccount.UserAccount;
+import model.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;

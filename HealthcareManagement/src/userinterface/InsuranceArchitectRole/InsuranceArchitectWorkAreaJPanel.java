@@ -5,13 +5,13 @@
  */
 package userinterface.InsuranceArchitectRole;
 
-import Business.DB4OUtil.DB4OUtil;
+import model.DB4OUtil.DB4OUtil;
 import model.EcoSystem;
-import Business.Enterprise.Enterprise;
-import Business.Enterprise.InsuranceEnterprise;
-import Business.Insurance.Insurance;
+import model.Enterprise.Enterprise;
+import model.Enterprise.InsuranceEnterprise;
+import model.Insurance.Insurance;
 import model.Organization.InsArchitectOrganization;
-import Business.UserAccount.UserAccount;
+import model.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
@@ -37,7 +37,7 @@ public class InsuranceArchitectWorkAreaJPanel extends javax.swing.JPanel {
     private DB4OUtil dB4OUtil;
     private EcoSystem ecosystem;
 
-    public InsuranceArchitectWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, InsArchitectOrganization insurancePolicyPlannerOrganization, Enterprise enterprise, DB4OUtil dB4OUtil, EcoSystem business) {
+    public InsuranceArchitectWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, InsArchitectOrganization insurancePolicyPlannerOrganization, Enterprise enterprise, DB4OUtil dB4OUtil, EcoSystem model) {
         initComponents();
 
         ImageIcon icon = new javax.swing.ImageIcon(getClass().getResource("/ImagesLatest/Insurance.gif"));
@@ -49,7 +49,7 @@ public class InsuranceArchitectWorkAreaJPanel extends javax.swing.JPanel {
         this.insurancePolicyPlannerOrganization = insurancePolicyPlannerOrganization;
         this.insuranceCompanyEnterprise = (InsuranceEnterprise) enterprise;
         this.dB4OUtil = dB4OUtil;
-        this.ecosystem = business;
+        this.ecosystem = model;
         valueLabel1.setText(enterprise.getName());
         populateTable();
     }

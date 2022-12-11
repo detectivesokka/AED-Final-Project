@@ -26,12 +26,12 @@ public class InsuranceBrokerRole extends Role {
      * @param account
      * @param organization
      * @param enterprise
-     * @param business
+     * @param model
      * @param dB4OUtil
      * @return
      */
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business,DB4OUtil dB4OUtil) {
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem model,DB4OUtil dB4OUtil) {
         
         return null;        
     }

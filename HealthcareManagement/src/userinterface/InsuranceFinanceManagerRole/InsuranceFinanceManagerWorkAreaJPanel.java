@@ -5,13 +5,13 @@
  */
 package userinterface.InsuranceFinanceManagerRole;
 
-import Business.DB4OUtil.DB4OUtil;
+import model.DB4OUtil.DB4OUtil;
 import model.EcoSystem;
-import Business.Enterprise.Enterprise;
+import model.Enterprise.Enterprise;
 import model.Organization.InsFinanceTeamOrganization;
-import Business.UserAccount.UserAccount;
-import Business.WorkQueue.InsuranceWorkRequest;
-import Business.WorkQueue.WorkRequest;
+import model.UserAccount.UserAccount;
+import model.WorkQueue.InsuranceWorkRequest;
+import model.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;

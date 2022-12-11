@@ -5,9 +5,9 @@
  */
 package userinterface.InsuranceFinanceManagerRole;
 
-import Business.Enterprise.Enterprise;
-import Business.UserAccount.UserAccount;
-import Business.WorkQueue.InsuranceWorkRequest;
+import model.Enterprise.Enterprise;
+import model.UserAccount.UserAccount;
+import model.WorkQueue.InsuranceWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
