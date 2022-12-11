@@ -1,20 +1,53 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
  */
 package userinterface;
 
+import model.EcoSystem;
+import Business.DB4OUtil.DB4OUtil;
+import Business.Enterprise.Enterprise;
+import Business.Network.HealthcareNetwork;
+import model.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import javax.swing.BorderFactory;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /**
  *
- * @author akshi
+ * @author Sai Dutt
  */
 public class MainJFrame extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MainJFrame
-     */
+    private EcoSystem ecosystem;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+
     public MainJFrame() {
+
+        this.setUndecorated(true);
         initComponents();
+        CenteredFrame(this);
+        this.setSize(1200, 799);
+        setResizable(false);
+        ecosystem = dB4OUtil.retrieveSystem();
+        login();
+    }
+
+    public void CenteredFrame(javax.swing.JFrame objFrame) {
+        
+        Dimension objDimension = Toolkit.getDefaultToolkit().getScreenSize();
+        
+        int iCoordX = (objDimension.width - objFrame.getWidth()) / 2;
+        int iCoordY = ((objDimension.height*4)/2 - objFrame.getHeight()) / 22;
+        
+        objFrame.setLocation(iCoordX, iCoordY);
     }
 
     /**
@@ -26,6 +59,7 @@ public class MainJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jSplitPane1 = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -33,6 +67,11 @@ public class MainJFrame extends javax.swing.JFrame {
         container = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jSplitPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jSplitPane1.setDividerLocation(70);
+        jSplitPane1.setDividerSize(-1);
+        jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
         jPanel1.setBackground(new java.awt.Color(22, 27, 34));
         jPanel1.setMinimumSize(new java.awt.Dimension(1200, 58));
@@ -56,38 +95,21 @@ public class MainJFrame extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 0, 30, 30));
 
+        jSplitPane1.setTopComponent(jPanel1);
+
         container.setBackground(new java.awt.Color(13, 17, 23));
         container.setLayout(new java.awt.CardLayout());
+        jSplitPane1.setRightComponent(container);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1200, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(container, javax.swing.GroupLayout.PREFERRED_SIZE, 1200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addComponent(jSplitPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 730, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(container, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 799, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -95,10 +117,10 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-
+        
         dB4OUtil.storeSystem(ecosystem);
         System.exit(0);
-
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -135,12 +157,21 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel container;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JSplitPane jSplitPane1;
     // End of variables declaration//GEN-END:variables
+
+    private void login() {
+        
+        container.removeAll();
+        LoginJPanel lp = new LoginJPanel(ecosystem, dB4OUtil,container);
+        container.add("LoginJPanel", lp);
+        CardLayout crdLyt = (CardLayout) container.getLayout();
+        crdLyt.next(container);        
+    }
 }
