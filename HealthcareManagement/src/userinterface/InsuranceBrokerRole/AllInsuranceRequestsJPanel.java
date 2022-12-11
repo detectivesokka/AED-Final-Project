@@ -5,11 +5,11 @@
  */
 package userinterface.InsuranceBrokerRole;
 
-import Business.Enterprise.Enterprise;
+import model.Enterprise.Enterprise;
 import model.Organization.InsBrokerOrganization;
-import Business.UserAccount.UserAccount;
-import Business.WorkQueue.InsuranceWorkRequest;
-import Business.WorkQueue.WorkRequest;
+import model.UserAccount.UserAccount;
+import model.WorkQueue.InsuranceWorkRequest;
+import model.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;

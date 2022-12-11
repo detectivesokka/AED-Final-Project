@@ -6,11 +6,11 @@
 package userinterface.MedicalAuditorRole;
 
 import model.EcoSystem;
-import Business.Enterprise.Enterprise;
+import model.Enterprise.Enterprise;
 import model.Organization.Organization;
 import model.Organization.NGOTreasurerOrganization;
-import Business.UserAccount.UserAccount;
-import Business.WorkQueue.NGOFundRequest;
+import model.UserAccount.UserAccount;
+import model.WorkQueue.NGOFundRequest;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;

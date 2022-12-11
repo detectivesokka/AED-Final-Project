@@ -5,14 +5,14 @@
  */
 package userinterface.MedicalAuditorRole;
 
-import Business.DB4OUtil.DB4OUtil;
+import model.DB4OUtil.DB4OUtil;
 import model.EcoSystem;
-import Business.Enterprise.Enterprise;
+import model.Enterprise.Enterprise;
 import model.Organization.NGOAuditorOrganization;
 import model.Organization.Organization;
-import Business.UserAccount.UserAccount;
-import Business.WorkQueue.NGOFundRequest;
-import Business.WorkQueue.WorkRequest;
+import model.UserAccount.UserAccount;
+import model.WorkQueue.NGOFundRequest;
+import model.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
