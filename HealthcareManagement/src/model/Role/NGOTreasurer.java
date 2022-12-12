@@ -21,8 +21,8 @@ import userinterface.NGOTreasurerRole.NGOTreasurerWorkAreaJPanel;
 public class NGOTreasurer extends Role {
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Enterprise enterprise, EcoSystem business,DB4OUtil dB4OUtil) {
-        return new NGOTreasurerWorkAreaJPanel(userProcessContainer, userAccount, (NGOTreasurerOrganization) organization, enterprise,dB4OUtil,business);
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Enterprise enterprise, EcoSystem model,DB4OUtil dB4OUtil) {
+        return new NGOTreasurerWorkAreaJPanel(userProcessContainer, userAccount, (NGOTreasurerOrganization) organization, enterprise,dB4OUtil,model);
     }
 
 }

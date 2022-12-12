@@ -18,8 +18,8 @@ import javax.swing.JPanel;
 public class DoctorRole extends Role {
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, Organization organization, Enterprise enterprise, EcoSystem business,DB4OUtil dB4OUtil) {
-        return new DoctorWorkAreaJPanel(userProcessContainer, (DoctorOrganization) organization, enterprise, business, dB4OUtil);
+    public JPanel createWorkArea(JPanel userProcessContainer, Organization organization, Enterprise enterprise, EcoSystem model,DB4OUtil dB4OUtil) {
+        return new DoctorWorkAreaJPanel(userProcessContainer, (DoctorOrganization) organization, enterprise, model, dB4OUtil);
     }
 
 }

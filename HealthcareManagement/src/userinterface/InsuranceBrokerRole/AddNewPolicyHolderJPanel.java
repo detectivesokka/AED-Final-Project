@@ -5,14 +5,14 @@
  */
 package userinterface.InsuranceBrokerRole;
 
-import Business.Enterprise.Enterprise;
-import Business.Enterprise.HealthCenterEnterprise;
-import Business.Enterprise.InsuranceEnterprise;
-import Business.Insurance.Insurance;
-import Business.InsuranceCustomer.InsuranceCustomer;
-import Business.Network.HealthcareNetwork;
-import Business.Patient.Patient;
-import Business.UserAccount.UserAccount;
+import model.Enterprise.Enterprise;
+import model.Enterprise.HealthCenterEnterprise;
+import model.Enterprise.InsuranceEnterprise;
+import model.Insurance.Insurance;
+import model.InsuranceCustomer.InsuranceCustomer;
+import model.Network.HealthcareNetwork;
+import model.Patient.Patient;
+import model.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
