@@ -8,21 +8,21 @@ package model.Role;
 import model.DB4OUtil.DB4OUtil;
 import model.EcoSystem;
 import model.Enterprise.Enterprise;
+import model.Organization.NGOAuditorOrganization;
 import model.Organization.Organization;
-import model.Organization.PharmacistOrganization;
 import model.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import userinterface.PharmacistRole.PharmacistWorkAreaJPanel;
+import userinterface.MedicalAuditorRole.AuditorWorkAreaJPanel;
 
 /**
  *
- * @author Ganesh
+ * @author Sai Dutt
  */
-public class PharmacistRole extends Role {
+public class NGOHealthAuditorRole extends Role {
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Enterprise enterprise, EcoSystem business,DB4OUtil dB4OUtil) {
-        return new PharmacistWorkAreaJPanel(userProcessContainer, userAccount, (PharmacistOrganization) organization, enterprise,dB4OUtil,business);
+        return new AuditorWorkAreaJPanel(userProcessContainer, userAccount, (NGOAuditorOrganization) organization, enterprise, dB4OUtil,business);
     }
 
 }

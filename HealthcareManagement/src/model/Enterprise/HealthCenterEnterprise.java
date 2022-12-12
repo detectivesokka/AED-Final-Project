@@ -1,5 +1,4 @@
-
-    /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -34,7 +33,6 @@ public class HealthCenterEnterprise extends Enterprise {
      * Returns list of all organizations belonging to HealthCenter Enterprise.
      * @return List of organization types
      */
-    @Override
     public List<Organization.Type> getAllOrganizationTypes() {
         List<Organization.Type> orgTypes = new ArrayList<>();
         orgTypes.add(Organization.Type.Doctor);
@@ -59,5 +57,3 @@ public class HealthCenterEnterprise extends Enterprise {
     }
 
 }
-
-

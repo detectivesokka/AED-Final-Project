@@ -4,7 +4,7 @@
  */
 package userinterface.LabAssistantRole;
 
-import Business.WorkQueue.PatientTreatmentWorkRequest;
+import model.WorkQueue.PatientTreatmentWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;

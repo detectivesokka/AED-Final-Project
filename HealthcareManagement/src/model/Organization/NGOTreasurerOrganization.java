@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Ganesh Kukreja
+ * @author Ganesh
  */
 public class NGOTreasurerOrganization extends Organization {
 

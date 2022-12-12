@@ -4,10 +4,10 @@
  */
 package userinterface.SystemAdminWorkArea;
 
+import model.Enterprise.Enterprise;
 import model.DB4OUtil.DB4OUtil;
 import model.EcoSystem;
 import model.Employee.Employee;
-import model.Enterprise.*;
 import model.Network.HealthcareNetwork;
 import model.Role.EnterpriseAdminRole;
 import model.Role.Role;

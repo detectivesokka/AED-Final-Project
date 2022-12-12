@@ -42,7 +42,16 @@ public class EnterpriseDirectory {
             
             case HealthCenter: 
                 enterprise = new HealthCenterEnterprise(name);
-                break;            
+                break;
+            case NGO:
+                enterprise = new NGOEnterprise(name);
+                break;
+            case InsuranceCompany:
+                enterprise = new InsuranceEnterprise(name);
+                break;
+            case Supplier:
+                enterprise = new SupplierEnterprise(name);
+                break;
         }
         
         enterpriseList.add(enterprise);                

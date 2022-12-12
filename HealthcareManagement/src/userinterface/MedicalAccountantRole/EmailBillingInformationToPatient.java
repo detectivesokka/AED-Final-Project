@@ -5,9 +5,9 @@
  */
 package userinterface.MedicalAccountantRole;
 
-import Business.Enterprise.Enterprise;
-import Business.UserAccount.UserAccount;
-import Business.WorkQueue.AccountantBillingRequest;
+import model.Enterprise.Enterprise;
+import model.UserAccount.UserAccount;
+import model.WorkQueue.AccountantBillingRequest;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;

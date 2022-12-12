@@ -5,30 +5,29 @@
  */
 package model.Organization;
 
-import model.Role.AccountantRole;
+import model.Role.EnterpriseAdminRole;
 import model.Role.Role;
 import java.util.ArrayList;
 
 /**
  *
- * @author Akshi
+ * @author Sai Dutt
  */
-public class AccountantOrganization extends Organization {
+public class AdminOrganization extends Organization {
 
-    public AccountantOrganization() {
-        super(Organization.Type.Accountant.getValue());
-
+    public AdminOrganization() {
+        super(Type.Admin.getValue());
     }
 
     /**
-     * Returns list of all supported role belonging to Accountant Organization.
+     * Returns list of all supported role belonging to Admin Organization.
      *
      * @return List of roles
      */
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new AccountantRole());
+        roles.add(new EnterpriseAdminRole());
         return roles;
     }
 

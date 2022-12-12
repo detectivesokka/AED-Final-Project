@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 /**
  *
+ * @author Sai Dutt
  */
 public class NGOAuditorOrganization extends Organization {
 

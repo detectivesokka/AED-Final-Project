@@ -1,28 +1,17 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package model.Patient;
-
-/**
- *
- * @author akshi
- */
-public class Patient {
-    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package model.Patient;
 
-
-
+import model.InsuranceCustomer.InsuranceCustomer;
 
 /**
  *
  * @author Akshita
  */
-
+public class Patient {
 
     private String id;
     private String lastName;
@@ -35,7 +24,7 @@ public class Patient {
     private boolean isTreatmentFinished;
     private String appointmentDate;
     private String email;
-   
+    private InsuranceCustomer insuranceCustomer;
 
     public String getPatientLastName() {
         return lastName;
@@ -77,7 +66,14 @@ public class Patient {
         this.address = patientAddress;
     }
 
-    
+    public InsuranceCustomer getInsuranceCustomer() {
+        return insuranceCustomer;
+    }
+
+    public void setInsuranceCustomer(InsuranceCustomer insuranceCustomer) {
+        this.insuranceCustomer = insuranceCustomer;
+    }
+
     public String getPatientId() {
         return id;
     }
@@ -132,6 +128,3 @@ public class Patient {
     }
 
 }
-
-    
-

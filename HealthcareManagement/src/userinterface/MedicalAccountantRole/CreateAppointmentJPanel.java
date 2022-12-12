@@ -5,18 +5,18 @@
  */
 package userinterface.MedicalAccountantRole;
 
-import Business.EcoSystem;
-import Business.Enterprise.Enterprise;
-import Business.Enterprise.HealthCenterEnterprise;
-import Business.Enterprise.InsuranceEnterprise;
-import Business.Insurance.Insurance;
-import Business.InsuranceCustomer.InsuranceCustomer;
-import Business.Network.HealthcareNetwork;
-import Business.Organization.DoctorOrganization;
-import Business.Organization.Organization;
-import Business.Patient.Patient;
-import Business.UserAccount.UserAccount;
-import Business.WorkQueue.PatientTreatmentWorkRequest;
+import model.EcoSystem;
+import model.Enterprise.Enterprise;
+import model.Enterprise.HealthCenterEnterprise;
+import model.Enterprise.InsuranceEnterprise;
+import model.Insurance.Insurance;
+import model.InsuranceCustomer.InsuranceCustomer;
+import model.Network.HealthcareNetwork;
+import model.Organization.DoctorOrganization;
+import model.Organization.Organization;
+import model.Patient.Patient;
+import model.UserAccount.UserAccount;
+import model.WorkQueue.PatientTreatmentWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;

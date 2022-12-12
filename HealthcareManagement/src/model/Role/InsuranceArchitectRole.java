@@ -12,6 +12,7 @@ import model.Organization.InsArchitectOrganization;
 import model.Organization.Organization;
 import model.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import userinterface.InsuranceArchitectRole.InsuranceArchitectWorkAreaJPanel;
 
 /**
  *
@@ -20,9 +21,8 @@ import javax.swing.JPanel;
 public class InsuranceArchitectRole extends Role {
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem model,DB4OUtil dB4OUtil) {
-        
-        return null;
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business,DB4OUtil dB4OUtil) {
+        return new InsuranceArchitectWorkAreaJPanel(userProcessContainer, account, (InsArchitectOrganization) organization, enterprise,dB4OUtil,business);
     }
 
 }

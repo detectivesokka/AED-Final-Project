@@ -7,7 +7,7 @@ package model.Supplier;
 
 /**
  *
- * @author Ganesh Kukreja
+ * @author Ganesh
  */
 public class Medicine {
     

@@ -5,16 +5,16 @@
  */
 package userinterface.DoctorRole;
 
-import Business.EcoSystem;
-import Business.Enterprise.Enterprise;
-import Business.Enterprise.SupplierEnterprise;
-import Business.Network.HealthcareNetwork;
-import Business.Organization.DeliveryManOrganization;
-import Business.Organization.Organization;
-import Business.Supplier.Medicine;
-import Business.UserAccount.UserAccount;
-import Business.WorkQueue.MedicalDeliveryWorkRequest;
-import Business.WorkQueue.PatientTreatmentWorkRequest;
+import model.EcoSystem;
+import model.Enterprise.Enterprise;
+import model.Enterprise.SupplierEnterprise;
+import model.Network.HealthcareNetwork;
+import model.Organization.DeliveryManOrganization;
+import model.Organization.Organization;
+import model.Supplier.Medicine;
+import model.UserAccount.UserAccount;
+import model.WorkQueue.MedicalDeliveryWorkRequest;
+import model.WorkQueue.PatientTreatmentWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;

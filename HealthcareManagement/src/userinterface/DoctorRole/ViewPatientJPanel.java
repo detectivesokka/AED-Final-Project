@@ -5,9 +5,9 @@
  */
 package userinterface.DoctorRole;
 
-import Business.Enterprise.Enterprise;
-import Business.UserAccount.UserAccount;
-import Business.WorkQueue.PatientTreatmentWorkRequest;
+import model.Enterprise.Enterprise;
+import model.UserAccount.UserAccount;
+import model.WorkQueue.PatientTreatmentWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;

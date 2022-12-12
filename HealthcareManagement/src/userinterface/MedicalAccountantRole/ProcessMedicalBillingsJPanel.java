@@ -5,13 +5,13 @@
  */
 package userinterface.MedicalAccountantRole;
 
-import Business.EcoSystem;
-import Business.Enterprise.Enterprise;
-import Business.Organization.AccountantOrganization;
-import Business.UserAccount.UserAccount;
-import Business.WorkQueue.AccountantBillingRequest;
-import Business.WorkQueue.InsuranceWorkRequest;
-import Business.WorkQueue.WorkRequest;
+import model.EcoSystem;
+import model.Enterprise.Enterprise;
+import model.Organization.AccountantOrganization;
+import model.UserAccount.UserAccount;
+import model.WorkQueue.AccountantBillingRequest;
+import model.WorkQueue.InsuranceWorkRequest;
+import model.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;

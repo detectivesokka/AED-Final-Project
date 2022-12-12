@@ -4,13 +4,13 @@
  */
 package userinterface.DoctorRole;
 
-import Business.DB4OUtil.DB4OUtil;
-import Business.EcoSystem;
-import Business.Enterprise.Enterprise;
-import Business.Organization.DoctorOrganization;
-import Business.UserAccount.UserAccount;
-import Business.WorkQueue.PatientTreatmentWorkRequest;
-import Business.WorkQueue.WorkRequest;
+import model.DB4OUtil.DB4OUtil;
+import model.EcoSystem;
+import model.Enterprise.Enterprise;
+import model.Organization.DoctorOrganization;
+import model.UserAccount.UserAccount;
+import model.WorkQueue.PatientTreatmentWorkRequest;
+import model.WorkQueue.WorkRequest;
 import com.db4o.Db4o;
 import java.awt.CardLayout;
 import java.awt.Color;

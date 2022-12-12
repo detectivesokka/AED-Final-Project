@@ -9,18 +9,14 @@ import model.EcoSystem;
 import model.Enterprise.Enterprise;
 import model.Organization.Organization;
 import model.UserAccount.UserAccount;
+import userinterface.AdministrativeRole.EnterpriseAdminWorkAreaJPanel;
 import javax.swing.JPanel;
-import userinterface.SystemAdminWorkArea.ManageEnterpriseAdminJPanel;
 
-/**
- *
- * @author Sai Dutt
- */
-public class SystemAdminRole extends Role {
+public class EnterpriseAdminRole extends Role {
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem ecosystem,DB4OUtil dB4OUtil) {
-        return new ManageEnterpriseAdminJPanel(userProcessContainer, ecosystem,dB4OUtil);
+        return new EnterpriseAdminWorkAreaJPanel(userProcessContainer, enterprise, account, ecosystem,dB4OUtil);
     }
 
 }
