@@ -12,7 +12,7 @@ import model.Organization.InsBrokerOrganization;
 import model.Organization.Organization;
 import model.UserAccount.UserAccount;
 import javax.swing.JPanel;
-
+import userinterface.InsuranceBrokerRole.InsuranceBrokerWorkAreaJPanel;
 
 /**
  *
@@ -20,20 +20,9 @@ import javax.swing.JPanel;
  */
 public class InsuranceBrokerRole extends Role {
 
-    /**
-     *
-     * @param userProcessContainer
-     * @param account
-     * @param organization
-     * @param enterprise
-     * @param model
-     * @param dB4OUtil
-     * @return
-     */
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem model,DB4OUtil dB4OUtil) {
-        
-        return null;        
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business,DB4OUtil dB4OUtil) {
+        return new InsuranceBrokerWorkAreaJPanel(userProcessContainer, account, (InsBrokerOrganization) organization, enterprise,dB4OUtil,business);
     }
 
 }

@@ -5,10 +5,12 @@
 package model.Role;
 
 import model.DB4OUtil.DB4OUtil;
+import model.EcoSystem;
 import model.Enterprise.Enterprise;
 import model.Organization.DoctorOrganization;
 import model.Organization.Organization;
-
+import model.UserAccount.UserAccount;
+import userinterface.DoctorRole.DoctorWorkAreaJPanel;
 import javax.swing.JPanel;
 
 /**
@@ -18,8 +20,8 @@ import javax.swing.JPanel;
 public class DoctorRole extends Role {
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, Organization organization, Enterprise enterprise, EcoSystem model,DB4OUtil dB4OUtil) {
-        return new DoctorWorkAreaJPanel(userProcessContainer, (DoctorOrganization) organization, enterprise, model, dB4OUtil);
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Enterprise enterprise, EcoSystem business,DB4OUtil dB4OUtil) {
+        return new DoctorWorkAreaJPanel(userProcessContainer, userAccount, (DoctorOrganization) organization, enterprise, business, dB4OUtil);
     }
 
 }

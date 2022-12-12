@@ -37,7 +37,7 @@ public class InsuranceArchitectWorkAreaJPanel extends javax.swing.JPanel {
     private DB4OUtil dB4OUtil;
     private EcoSystem ecosystem;
 
-    public InsuranceArchitectWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, InsArchitectOrganization insurancePolicyPlannerOrganization, Enterprise enterprise, DB4OUtil dB4OUtil, EcoSystem model) {
+    public InsuranceArchitectWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, InsArchitectOrganization insurancePolicyPlannerOrganization, Enterprise enterprise, DB4OUtil dB4OUtil, EcoSystem business) {
         initComponents();
 
         ImageIcon icon = new javax.swing.ImageIcon(getClass().getResource("/ImagesLatest/Insurance.gif"));
@@ -49,7 +49,7 @@ public class InsuranceArchitectWorkAreaJPanel extends javax.swing.JPanel {
         this.insurancePolicyPlannerOrganization = insurancePolicyPlannerOrganization;
         this.insuranceCompanyEnterprise = (InsuranceEnterprise) enterprise;
         this.dB4OUtil = dB4OUtil;
-        this.ecosystem = model;
+        this.ecosystem = business;
         valueLabel1.setText(enterprise.getName());
         populateTable();
     }

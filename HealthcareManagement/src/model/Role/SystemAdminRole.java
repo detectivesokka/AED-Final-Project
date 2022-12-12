@@ -10,6 +10,7 @@ import model.Enterprise.Enterprise;
 import model.Organization.Organization;
 import model.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import userinterface.SystemAdminWorkArea.ManageEnterpriseAdminJPanel;
 
 /**
  *
@@ -18,9 +19,8 @@ import javax.swing.JPanel;
 public class SystemAdminRole extends Role {
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem ecosystem, DB4OUtil dB4OUtil) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem ecosystem,DB4OUtil dB4OUtil) {
+        return new ManageEnterpriseAdminJPanel(userProcessContainer, ecosystem,dB4OUtil);
     }
-    
 
 }

@@ -5,13 +5,13 @@
  */
 package userinterface.MedicalAccountantRole;
 
-import Business.DB4OUtil.DB4OUtil;
-import Business.EcoSystem;
-import Business.Enterprise.Enterprise;
-import Business.Enterprise.HealthCenterEnterprise;
-import Business.Organization.AccountantOrganization;
-import Business.Patient.Patient;
-import Business.UserAccount.UserAccount;
+import model.DB4OUtil.DB4OUtil;
+import model.EcoSystem;
+import model.Enterprise.Enterprise;
+import model.Enterprise.HealthCenterEnterprise;
+import model.Organization.AccountantOrganization;
+import model.Patient.Patient;
+import model.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;

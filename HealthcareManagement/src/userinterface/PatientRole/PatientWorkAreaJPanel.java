@@ -5,10 +5,10 @@
  */
 package userinterface.PatientRole;
 
-import Business.DB4OUtil.DB4OUtil;
-import Business.EcoSystem;
-import Business.Organization.Organization;
-import Business.UserAccount.UserAccount;
+import model.DB4OUtil.DB4OUtil;
+import model.EcoSystem;
+import model.Organization.Organization;
+import model.UserAccount.UserAccount;
 import javax.swing.JPanel;
 
 /**
